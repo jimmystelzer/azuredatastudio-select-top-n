@@ -12,19 +12,53 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:azuredatastudio-select-top-n.helloWorld",
-		"onCommand:azuredatastudio-select-top-n.showCurrentConnection"
+		"onCommand:azuredatastudio-select-top-n.top10",
+		"onCommand:azuredatastudio-select-top-n.top100",
+		"onCommand:azuredatastudio-select-top-n.topN",
+		"onCommand:azuredatastudio-select-top-n.topNDontAutoRun"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"menus": {
+			"objectExplorer/item/context": [
+				{
+					"command": "azuredatastudio-select-top-n.top10",
+					"when": "connectionProvider == MSSQL && nodeType == Table || nodeType == View",
+                    "group": "Script"
+				},
+				{
+					"command": "azuredatastudio-select-top-n.top100",
+					"when": "connectionProvider == MSSQL && nodeType == Table || nodeType == View",
+                    "group": "Script"
+				},
+				{
+					"command": "azuredatastudio-select-top-n.topN",
+					"when": "connectionProvider == MSSQL && nodeType == Table || nodeType == View",
+                    "group": "Script"
+				},
+				{
+					"command": "azuredatastudio-select-top-n.topNDontAutoRun",
+					"when": "connectionProvider == MSSQL && nodeType == Table || nodeType == View",
+                    "group": "Script"
+				}
+			]
+		},
 		"commands": [
 			{
-				"command": "azuredatastudio-select-top-n.helloWorld",
-				"title": "Hello World"
+				"command": "azuredatastudio-select-top-n.top10",
+				"title": "Select Top 10"
 			},
 			{
-				"command": "azuredatastudio-select-top-n.showCurrentConnection",
-				"title": "Show Current Connection"
+				"command": "azuredatastudio-select-top-n.top100",
+				"title": "Select Top 100"
+			},
+			{
+				"command": "azuredatastudio-select-top-n.topN",
+				"title": "Select Top N"
+			},
+			{
+				"command": "azuredatastudio-select-top-n.topNDontAutoRun",
+				"title": "Select Top N (without auto run the query)"
 			}
 		]
 	},

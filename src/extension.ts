@@ -9,37 +9,62 @@ import * as vscode from 'vscode';
 
 import * as azdata from 'azdata';
 
+// Select Top N extension class
+import { SelectTopN } from './SelectTopN';
+
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 
-    // Use the console to output diagnostic information (console.log) and errors (console.error)
-    // This line of code will only be executed once when your extension is activated
-    console.log('Congratulations, your extension "azuredatastudio-select-top-n" is now active!');
-
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with  registerCommand
     // The commandId parameter must match the command field in package.json
-    context.subscriptions.push(vscode.commands.registerCommand('azuredatastudio-select-top-n.helloWorld', () => {
-        // The code you place here will be executed every time your command is executed
-
-        // Display a message box to the user
-        vscode.window.showInformationMessage('Hello World!');
+    context.subscriptions.push(vscode.commands.registerCommand('azuredatastudio-select-top-n.top10', async (context: azdata.ObjectExplorerContext) => {
+        await SelectTopN.generateSelectQuery(context, 10, true);
     }));
 
-    context.subscriptions.push(vscode.commands.registerCommand('azuredatastudio-select-top-n.showCurrentConnection', () => {
-        // The code you place here will be executed every time your command is executed
+    context.subscriptions.push(vscode.commands.registerCommand('azuredatastudio-select-top-n.top100', async (context: azdata.ObjectExplorerContext) => {
+        await SelectTopN.generateSelectQuery(context, 100, true);
+    }));
 
-        // Display a message box to the user
-        azdata.connection.getCurrentConnection().then(connection => {
-            let connectionId = connection ? connection.connectionId : 'No connection found!';
-            vscode.window.showInformationMessage(connectionId);
-        }, error => {
-             console.info(error);
+    context.subscriptions.push(vscode.commands.registerCommand('azuredatastudio-select-top-n.topN', async (context: azdata.ObjectExplorerContext) => {
+        let topN = await vscode.window.showInputBox({ 
+            value: "1000", 
+            prompt: `Enter number of rows do you like to select`, 
+            validateInput: (value) => (
+                    value && 
+                    Number.isNaN(Number(value) as any) ? 'Must be a number' : undefined &&
+                    Number.isInteger(Number(value))
+                )
         });
+        if (!topN) {
+            vscode.window.showErrorMessage("You need to enter a valid number of results.");
+            return;
+        }
+        let topNInteger = Number.parseInt(topN);
+        await SelectTopN.generateSelectQuery(context, topNInteger, true);
+    }));
+
+    context.subscriptions.push(vscode.commands.registerCommand('azuredatastudio-select-top-n.topNDontAutoRun', async (context: azdata.ObjectExplorerContext) => {
+        let topN = await vscode.window.showInputBox({ 
+            value: "1000", 
+            prompt: `Enter number of rows do you like to select`, 
+            validateInput: (value) => (
+                    value && 
+                    Number.isNaN(Number(value) as any) ? 'Must be a number' : undefined &&
+                    Number.isInteger(Number(value))
+                )
+        });
+        if (!topN) {
+            vscode.window.showErrorMessage("You need to enter a valid number of results.");
+            return;
+        }
+        let topNInteger = Number.parseInt(topN);
+        await SelectTopN.generateSelectQuery(context, topNInteger, false);
     }));
 }
 
 // this method is called when your extension is deactivated
 export function deactivate() {
 }
+
