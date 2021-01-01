@@ -11,6 +11,10 @@
 	"categories": [
 		"Other"
 	],
+	"repository": {
+        "type": "git",
+        "url": "https://github.com/jimmystelzer/azuredatastudio-select-top-n.git"
+    },
 	"activationEvents": [
 		"onCommand:azuredatastudio-select-top-n.top10",
 		"onCommand:azuredatastudio-select-top-n.top100",

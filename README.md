@@ -1,13 +1,5 @@
-# README
-## This is the README for your extension "azuredatastudio-select-top-n"
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+# Azure Data Studio Select Top N
+This extension select the first N rows from tables and views
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+## Installation
+The current release is available to [download as a .vsix file](https://github.com/jimmystelzer/azuredatastudio-select-top-n/releases/download/0.0.1/azuredatastudio-select-top-n-0.0.1.vsix) and can be installed by opening the command palette (`ctrl/command+shift+p`) and selecting `Extensions: Install from VSIX...`
