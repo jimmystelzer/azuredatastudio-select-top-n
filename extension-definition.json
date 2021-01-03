@@ -1,0 +1,49 @@
+{
+    "extensionName": "azuredatastudio-select-top-n",
+    "displayName": "Select Top N",
+    "shortDescription": "Azure data studio extension to select the first N rows from tables/views",
+    "publisher": {
+      "displayName":"jimmystelzer",
+      "publisherId": "jimmystelzer",
+      "publisherName":"jimmystelzer"
+    },
+    "versions": [
+      {
+        "version": "0.0.3",
+        "lastUpdated": "2021-01-03",
+        "assetUri": "",
+        "fallbackAssetUri": "fallbackAssetUri",
+        "files": [
+        {
+          "assetType": "Microsoft.SQLOps.DownloadPage",
+          "source": "https://github.com/jimmystelzer/azuredatastudio-select-top-n/releases/tag/0.0.3"
+        },
+        {
+          "assetType": "Microsoft.VisualStudio.Services.Links.Source",
+          "source": "https://github.com/jimmystelzer/azuredatastudio-select-top-n"
+       },
+       {
+          "assetType": "Microsoft.VisualStudio.Services.Icons.Default",
+          "source": "https://raw.githubusercontent.com/jimmystelzer/azuredatastudio-select-top-n/master/src/media/icon.png"
+        },
+        {
+          "assetType": "Microsoft.VisualStudio.Services.Content.Details",
+         "source": "https://raw.githubusercontent.com/jimmystelzer/azuredatastudio-select-top-n/master/src/README.md"
+        },
+        {
+          "assetType": "Microsoft.VisualStudio.Code.Manifest",
+          "source": "https://raw.githubusercontent.com/jimmystelzer/azuredatastudio-select-top-n/master/package.json"
+        },
+        {
+          "assetType": "Microsoft.VisualStudio.Services.Content.License",
+          "source": "https://raw.githubusercontent.com/jimmystelzer/azuredatastudio-select-top-n/master/LICENSE"
+        }
+        ],
+        "properties": [
+          { "key": "Microsoft.VisualStudio.Code.ExtensionDependencies", "value":""},
+          { "key": "Microsoft.VisualStudio.Code.Engine", "value":"*"}
+        ]
+      }
+    ],
+    "statistics": []
+  }

@@ -3,7 +3,7 @@
 	"displayName": "Select Top N",
 	"description": "Azure data studio extension to select the first N rows from tables/views",
 	"publisher": "jimmystelzer",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"engines": {
 		"vscode": "^1.39.0",
 		"azdata": "*"

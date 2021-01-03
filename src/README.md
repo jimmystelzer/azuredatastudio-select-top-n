@@ -15,14 +15,13 @@ This is a list of current features of this extension.
 
 ## Screenshots
 
-![Select Top N Menu](artwork/azure_data_studio-select_top_n.png)
 
-![Select Top N Dialog](artwork/azure_data_studio-select_top_n-dialog.png)
+
+![Select Top N Menu](https://raw.githubusercontent.com/jimmystelzer/azuredatastudio-select-top-n/master/src/media/azure_data_studio-select_top_n.png)
+
+![Select Top N Dialog](https://raw.githubusercontent.com/jimmystelzer/azuredatastudio-select-top-n/master/src/media/azure_data_studio-select_top_n-dialog.png)
 
 ## Installation
 
 The current release is available to [download as a .vsix file](https://github.com/jimmystelzer/azuredatastudio-select-top-n/releases/download/0.0.1/azuredatastudio-select-top-n-0.0.1.vsix) and can be installed by opening the command palette (`ctrl/command+shift+p`) and selecting `Extensions: Install from VSIX...`.
 
-## Change Log
-
-See the [Change Log](./CHANGELOG.md) for the full changes.
