@@ -15,9 +15,9 @@ This is a list of current features of this extension.
 
 ## Screenshots
 
-![Select Top N Menu](artwork/azure_data_studio-select_top_n.png)
+![Select Top N Menu](https://raw.githubusercontent.com/jimmystelzer/azuredatastudio-select-top-n/master/artwork/azure_data_studio-select_top_n.png)
 
-![Select Top N Dialog](artwork/azure_data_studio-select_top_n-dialog.png)
+![Select Top N Dialog](https://raw.githubusercontent.com/jimmystelzer/azuredatastudio-select-top-n/master/artwork/azure_data_studio-select_top_n-dialog.png)
 
 ## Installation
 
