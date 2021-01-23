@@ -21,7 +21,7 @@ This is a list of current features of this extension.
 
 ## Installation
 
-The current release is available to [download as a .vsix file](https://github.com/jimmystelzer/azuredatastudio-select-top-n/releases/download/0.0.1/azuredatastudio-select-top-n-0.0.1.vsix) and can be installed by opening the command palette (`ctrl/command+shift+p`) and selecting `Extensions: Install from VSIX...`.
+The current release is available to [download as a .vsix file](https://github.com/jimmystelzer/azuredatastudio-select-top-n/releases/download/0.0.5/azuredatastudio-select-top-n-0.0.5.vsix) and can be installed by opening the command palette (`ctrl/command+shift+p`) and selecting `Extensions: Install from VSIX...`.
 
 ## Change Log
 

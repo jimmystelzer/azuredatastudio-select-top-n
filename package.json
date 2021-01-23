@@ -4,7 +4,7 @@
 	"description": "Azure data studio extension to select the first N rows from tables/views",
 	"icon": "artwork/icon.png",
 	"publisher": "jimmystelzer",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"engines": {
 		"vscode": "^1.39.0",
 		"azdata": "*"

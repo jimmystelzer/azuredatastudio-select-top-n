@@ -12,6 +12,7 @@ export class SelectTopN {
     static async generateSelectQuery(context: azdata.ObjectExplorerContext, topN:Number, autoRun:boolean) {
         try{
             if (!context ) {
+                console.log(context);
                 vscode.window.showInformationMessage("This cannot run from command menu.");
                 return;
             }
@@ -19,14 +20,20 @@ export class SelectTopN {
             let connectionId = (connection) ? connection.connectionId : undefined;
 
             if(!connection || !connectionId || !context.connectionProfile || !context.nodeInfo || !context.nodeInfo.metadata){
+                console.log(connection, connectionId, context);
                 vscode.window.showInformationMessage("You need to be connected to run this.");
                 return;
             }
             let connectionUri = await azdata.connection.getUriForConnection(connectionId);
+            console.log(connectionUri);
             let queryProvider = azdata.dataprotocol.getProvider<azdata.QueryProvider>(connection.providerId,azdata.DataProviderType.QueryProvider);
+            console.log(queryProvider);
             let tableName: string = `[${context.connectionProfile.databaseName}].[${context.nodeInfo.metadata.schema}].[${context.nodeInfo.metadata.name}]`;
-            let query = `USE ${context.connectionProfile.databaseName}; SELECT [COLUMN_NAME] FROM INFORMATION_SCHEMA.COLUMNS WHERE [TABLE_NAME]='${context.nodeInfo.metadata.name}' AND [TABLE_SCHEMA]='${context.nodeInfo.metadata.schema}'` ;
+            console.log(tableName);
+            let query = `USE [${context.connectionProfile.databaseName}]; SELECT [COLUMN_NAME] FROM INFORMATION_SCHEMA.COLUMNS WHERE [TABLE_NAME]='${context.nodeInfo.metadata.name}' AND [TABLE_SCHEMA]='${context.nodeInfo.metadata.schema}'` ;
+            console.log(query);
             let resultSchema = await queryProvider.runQueryAndReturn(connectionUri, query);
+            console.log(resultSchema);
             if(resultSchema.rows.length > 0){
                 let finalQuery = `SELECT TOP (${topN})\n`;
                 resultSchema.rows.forEach(function(row){
